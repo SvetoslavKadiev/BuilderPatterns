@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Console;
 
-namespace Builder
+namespace BuilderPatterns.Builder
 {
     public class Demo
     {
