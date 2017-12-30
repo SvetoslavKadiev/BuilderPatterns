@@ -8,8 +8,8 @@ namespace Builder
 {
     public class HtmlElement
     {
-        public string Name, Text;
-        public List<HtmlElement> Elements = new List<HtmlElement>();
+
+        private List<HtmlElement> elements;
         private const int IndentSize = 2;
 
         public HtmlElement()
@@ -18,8 +18,25 @@ namespace Builder
 
         public HtmlElement(string name, string text)
         {
-            Name = name ?? throw new ArgumentNullException(paramName: nameof(name));
-            Text = text ?? throw new ArgumentNullException(paramName: nameof(text));
+            this.Name = name ?? throw new ArgumentNullException(paramName: nameof(name));
+            this.Text = text ?? throw new ArgumentNullException(paramName: nameof(text));
+        }
+
+        public string Name { get; set; }
+        public string Text { get; set; }
+
+        public List<HtmlElement> Elements
+        {
+            get
+            {
+                if (elements == null)
+                {
+                    this.elements = new List<HtmlElement>();
+                }
+
+                return elements;
+            }
+            
         }
 
         private string ToStringImpl(int indent)
@@ -27,17 +44,21 @@ namespace Builder
             var sb = new StringBuilder();
             var offset = new string(' ', IndentSize * indent);
 
-            sb.AppendLine($"{offset}<{Name}>");
-            if (!string.IsNullOrWhiteSpace(Text))
+            // Opening tag
+            sb.AppendLine($"{offset}<{this.Name}>");
+            if (!string.IsNullOrWhiteSpace(this.Text))
             {
                 sb.Append(new string(' ', IndentSize * (indent + 1)));
-                sb.AppendLine(Text);
+                sb.AppendLine(this.Text);
             }
 
-            foreach (var e in Elements)
+
+            foreach (var e in this.Elements)
                 sb.Append(e.ToStringImpl(indent + 1));
 
-            sb.AppendLine($"{offset}</{Name}>");
+            // Closing tag
+            sb.AppendLine($"{offset}</{this.Name}>");
+
             return sb.ToString();
         }
 

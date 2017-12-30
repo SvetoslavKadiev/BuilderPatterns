@@ -31,6 +31,13 @@ namespace Builder
             return this;
         }
 
+        public HtmlElement AddSubChild(string childName, string childText)
+        {
+            var e = new HtmlElement(childName, childText);
+            root.Elements.Add(e);
+            return e;
+        }
+
         public override string ToString()
         {
             return root.ToString();
