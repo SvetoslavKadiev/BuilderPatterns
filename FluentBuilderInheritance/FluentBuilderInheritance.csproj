@@ -4,13 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8D16A727-902D-42CE-92AB-3D39C3458CC4}</ProjectGuid>
+    <ProjectGuid>{3EB75283-2875-4B61-9F31-5EE9C74D36CA}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>BuilderPatterns.Builder</RootNamespace>
-    <AssemblyName>Builder</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <RootNamespace>BuilderPatterns.FluentBuilderInheritance</RootNamespace>
+    <AssemblyName>FluentBuilderInheritance</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -42,8 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HtmlBuilder.cs" />
-    <Compile Include="HtmlElement.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
