@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3EB75283-2875-4B61-9F31-5EE9C74D36CA}</ProjectGuid>
+    <ProjectGuid>{0AA785B0-AD85-488A-A436-6967A3CB1C37}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>BuilderPatterns.FluentBuilderInheritance</RootNamespace>
-    <AssemblyName>FluentBuilderInheritance</AssemblyName>
+    <RootNamespace>BuilderPatterns.BuilderFacets</RootNamespace>
+    <AssemblyName>BuilderFacets</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -42,6 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Person.cs" />
+    <Compile Include="PersonAddressBuilder.cs" />
+    <Compile Include="PersonBuilder.cs" />
+    <Compile Include="PersonJobBuilder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
